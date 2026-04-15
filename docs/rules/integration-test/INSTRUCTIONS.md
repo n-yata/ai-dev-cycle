@@ -13,19 +13,39 @@
 
 ---
 
+## 成果物一覧
+
+| # | 成果物 | テンプレート | 単位 | 説明 |
+|---|--------|-----------|------|------|
+| 1 | テストシナリオ一覧 | [test-scenario.template.md](test-scenario.template.md) | 機能フローごと | シナリオ・前提条件・期待結果 |
+
+### ファイル命名規則
+
+```
+docs/artifacts/integration-test/frontend/{機能名}.md
+docs/artifacts/integration-test/backend/{機能名}.md
+例: docs/artifacts/integration-test/frontend/user-auth-flow.md
+例: docs/artifacts/integration-test/backend/resources-api.md
+```
+
+テストシナリオは継続的に更新する。ファイル内の「最終更新」で履歴を管理する。
+
+---
+
 ## ディレクトリ構成
 
 ```
-rules/integration-test/       # ルール・テンプレート（ここ）
+rules/integration-test/          # ルール・テンプレート（ここ）
 ├── INSTRUCTIONS.md
+├── test-scenario.template.md
 ├── frontend/
-│   ├── INSTRUCTIONS.md
-│   └── template.md
+│   ├── INSTRUCTIONS.md          # FE 結合テストガイド・コード例
+│   └── guidelines.md            # （将来追加用）
 └── backend/
-    ├── INSTRUCTIONS.md
-    └── template.md
+    ├── INSTRUCTIONS.md          # BE 結合テストガイド・コード例
+    └── guidelines.md            # （将来追加用）
 
-artifacts/integration-test/   # テスト仕様書の出力先
+artifacts/integration-test/      # テストシナリオの出力先
 ├── frontend/
 └── backend/
 ```
@@ -39,7 +59,7 @@ artifacts/integration-test/   # テスト仕様書の出力先
 | 対象範囲 | 単一モジュール | 複数モジュール・システム間 |
 | 依存関係 | モック化 | 実際の依存関係を使用 |
 | 実行速度 | 高速（秒単位） | 低速（分単位） |
-| 実行頻度 | コミットごと | PRマージ前・デプロイ前 |
+| 実行頻度 | コミットごと | PR マージ前・デプロイ前 |
 | 目的 | ロジックの正確性 | 連携の正確性 |
 
 ---
@@ -48,8 +68,8 @@ artifacts/integration-test/   # テスト仕様書の出力先
 
 結合テストは専用のテスト環境で実行する。
 
-- **DB**: テスト専用DBを使用（本番・開発DBとは分離）
-- **外部API**: スタブサーバーまたはサンドボックス環境を使用
+- **DB**: テスト専用 DB を使用（本番・開発 DB とは分離）
+- **外部 API**: スタブサーバーまたはサンドボックス環境を使用
 - **環境変数**: `.env.test` ファイルで管理
 
 ---
@@ -58,13 +78,13 @@ artifacts/integration-test/   # テスト仕様書の出力先
 
 - [ ] 主要なユーザーフロー（ゴールデンパス）がカバーされている
 - [ ] 認証・認可フローが検証されている
-- [ ] エラーケース（API失敗、ネットワークエラー）が検証されている
+- [ ] エラーケース（API 失敗、ネットワークエラー）が検証されている
 - [ ] データの永続化・取得が正しく機能している
 - [ ] テスト後にデータがクリーンアップされている
 
 ---
 
-## 各観点の詳細
+## コード例・詳細ガイド
 
 - [フロントエンド結合テストガイド](frontend/INSTRUCTIONS.md)
 - [バックエンド結合テストガイド](backend/INSTRUCTIONS.md)

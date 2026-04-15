@@ -13,6 +13,28 @@
 
 ---
 
+## 成果物一覧
+
+### フロントエンド
+
+| # | 成果物 | テンプレート | 単位 | 説明 |
+|---|--------|-----------|------|------|
+| 1 | 画面遷移図 | [screen-flow.template.md](frontend/screen-flow.template.md) | アプリ/機能群ごと | 画面間の遷移とルーティングの全体像 |
+| 2 | 画面設計書 | [screen-design.template.md](frontend/screen-design.template.md) | 画面ごと | 各画面のレイアウト・コンポーネント・状態管理 |
+
+### バックエンド
+
+| # | 成果物 | テンプレート | 単位 | 説明 |
+|---|--------|-----------|------|------|
+| 3 | データエンティティ関連図 | [entity-relationship.template.md](backend/entity-relationship.template.md) | システム/機能群ごと | エンティティ間のリレーション全体像 |
+| 4 | データエンティティ定義 | [entity-definition.template.md](backend/entity-definition.template.md) | エンティティごと | テーブル定義・カラム・制約・インデックス |
+| 5 | API 一覧 | [api-list.template.md](backend/api-list.template.md) | システム/機能群ごと | 全エンドポイントの一覧と共通仕様 |
+| 6 | API 処理設計書 | [api-design.template.md](backend/api-design.template.md) | API ごと | 各 API の詳細な処理フロー・IF 定義 |
+| 7 | エラーコード一覧 | [error-codes.template.md](backend/error-codes.template.md) | システム全体 | エラーコードの命名規則と定義 |
+| 8 | 外部連携 IF 定義 | [external-interface.template.md](backend/external-interface.template.md) | 外部サービスごと | 外部 API との接続・データマッピング |
+
+---
+
 ## ディレクトリ構成
 
 ```
@@ -20,10 +42,16 @@ rules/detailed-design/        # ルール・テンプレート（ここ）
 ├── INSTRUCTIONS.md
 ├── frontend/
 │   ├── INSTRUCTIONS.md
-│   └── template.md
+│   ├── screen-flow.template.md
+│   └── screen-design.template.md
 └── backend/
     ├── INSTRUCTIONS.md
-    └── template.md
+    ├── entity-relationship.template.md
+    ├── entity-definition.template.md
+    ├── api-list.template.md
+    ├── api-design.template.md
+    ├── error-codes.template.md
+    └── external-interface.template.md
 
 artifacts/detailed-design/    # 成果物の出力先
 ├── frontend/
@@ -34,11 +62,27 @@ artifacts/detailed-design/    # 成果物の出力先
 
 ## 詳細設計ドキュメントの作成手順
 
-1. 対象（FE/BE）に応じたテンプレートをコピーする
-2. ファイル名は `YYYYMMDD_機能名.md` の形式で `docs/artifacts/detailed-design/` 配下に保存する（例: `20260414_user-auth.md`）
+1. 対象の成果物に応じたテンプレートをコピーする
+2. `docs/artifacts/detailed-design/` 配下に保存する（命名規則は下記参照）
 3. テンプレートの各セクションを埋める
 4. チームレビューを実施する
 5. 承認後、実装フェーズへ移行する
+6. 仕様変更があれば既存ファイルを直接更新する（ファイル内の「最終更新」を変更する）
+
+### ファイル命名規則
+
+設計書は継続的に更新するため、ファイル名に日付は付けない。
+
+| 成果物 | ファイル名 | 例 |
+|--------|----------|-----|
+| 画面遷移図 | `screen-flow.md` | 1ファイル/機能群 |
+| 画面設計書 | `{画面名}.md` | `login.md`, `dashboard.md` |
+| エンティティ関連図 | `entity-relationship.md` | 1ファイル/機能群 |
+| エンティティ定義 | `{エンティティ名}.md` | `users.md`, `orders.md` |
+| API 一覧 | `api-list.md` | 1ファイル/機能群 |
+| API 処理設計書 | `{API名}.md` | `create-user.md`, `get-orders.md` |
+| エラーコード一覧 | `error-codes.md` | 1ファイル/システム |
+| 外部連携 IF 定義 | `{サービス名}.md` | `stripe.md`, `sendgrid.md` |
 
 ---
 
@@ -51,6 +95,8 @@ artifacts/detailed-design/    # 成果物の出力先
 - [ ] フロントエンド・バックエンド間のインターフェース（API仕様）が合意されている
 - [ ] エラーケース・例外処理が検討されている
 - [ ] セキュリティ要件が考慮されている
+- [ ] エラーコードが一覧に定義されている
+- [ ] 外部連携がある場合、IF 定義が作成されている
 - [ ] レビュアーの承認を得ている
 
 ---

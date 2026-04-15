@@ -72,4 +72,4 @@ export const createTestUser = (overrides = {}) => ({
 });
 ```
 
-テンプレートは [template.md](template.md) を参照してください。
+テストシナリオのテンプレートは [test-scenario.template.md](../test-scenario.template.md) を参照してください。

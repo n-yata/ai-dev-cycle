@@ -57,4 +57,4 @@ npx playwright test --headed
 - テスト終了後は `afterAll` / `afterEach` でクリーンアップする
 - 本番環境のデータに依存しないテストデータを使用する
 
-テンプレートは [template.md](template.md) を参照してください。
+テストシナリオのテンプレートは [test-scenario.template.md](../test-scenario.template.md) を参照してください。

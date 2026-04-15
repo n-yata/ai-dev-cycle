@@ -4,15 +4,28 @@
 
 ---
 
+## 成果物
+
+| 成果物 | テンプレート | 単位 |
+|--------|-----------|------|
+| データエンティティ関連図 | [entity-relationship.template.md](entity-relationship.template.md) | システム/機能群ごと |
+| データエンティティ定義 | [entity-definition.template.md](entity-definition.template.md) | エンティティごと |
+| API 一覧 | [api-list.template.md](api-list.template.md) | システム/機能群ごと |
+| API 処理設計書 | [api-design.template.md](api-design.template.md) | API ごと |
+| エラーコード一覧 | [error-codes.template.md](error-codes.template.md) | システム全体 |
+| 外部連携 IF 定義 | [external-interface.template.md](external-interface.template.md) | 外部サービスごと |
+
+---
+
 ## 設計の観点
 
-### 1. API設計
+### 1. API 設計
 
 | 観点 | 内容 |
 |------|------|
-| RESTful設計 | リソース指向のURL設計、HTTPメソッドの適切な使用 |
+| RESTful 設計 | リソース指向の URL 設計、HTTP メソッドの適切な使用 |
 | バージョニング | `/api/v1/` 等のバージョン管理方針 |
-| レスポンス形式 | 成功・エラー時のJSONスキーマ統一 |
+| レスポンス形式 | 成功・エラー時の JSON スキーマ統一 |
 | 認証・認可 | JWT / Session / OAuth の方式と適用範囲 |
 
 ### 2. データモデル設計
@@ -39,26 +52,37 @@
 |------|------|
 | 認証フロー | ログイン・トークン更新・ログアウトのフロー |
 | 認可ポリシー | ロールベースアクセス制御（RBAC）の設計 |
-| 入力検証 | SQLインジェクション・XSS対策 |
+| 入力検証 | SQL インジェクション・XSS 対策 |
 | 機密情報管理 | 環境変数・シークレット管理の方針 |
 
-### 5. シーケンス図
+### 5. エラー設計
 
-主要なAPI呼び出しフローをシーケンス図で表現する。
+| 観点 | 内容 |
+|------|------|
+| エラーコード体系 | カテゴリ別の命名規則を統一する |
+| エラーレスポンス形式 | JSON スキーマの統一 |
+| クライアント連携 | フロントエンドがエラーコードで分岐できるよう設計する |
 
-```
-Client → API Gateway → Service Layer → Repository → DB
-```
+### 6. 外部連携設計
+
+| 観点 | 内容 |
+|------|------|
+| IF 定義 | リクエスト/レスポンスのデータマッピング |
+| 障害対策 | タイムアウト・リトライ・サーキットブレーカー |
+| テスト方針 | モック/サンドボックス環境の利用方法 |
 
 ---
 
 ## 設計ドキュメントの保存場所
 
-設計ドキュメントは以下の命名規則で成果物ディレクトリに保存する。
-
 ```
-docs/artifacts/detailed-design/backend/YYYYMMDD_機能名.md
-例: docs/artifacts/detailed-design/backend/20260414_user-auth.md
+docs/artifacts/detailed-design/backend/{成果物名}.md
+例: docs/artifacts/detailed-design/backend/entity-relationship.md
+例: docs/artifacts/detailed-design/backend/users.md
+例: docs/artifacts/detailed-design/backend/api-list.md
+例: docs/artifacts/detailed-design/backend/create-user.md
+例: docs/artifacts/detailed-design/backend/error-codes.md
+例: docs/artifacts/detailed-design/backend/stripe.md
 ```
 
-テンプレートは [template.md](template.md) を使用してください。
+設計書は継続的に更新する。ファイル内の「最終更新」で履歴を管理する。

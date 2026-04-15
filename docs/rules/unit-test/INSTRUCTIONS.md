@@ -13,19 +13,39 @@
 
 ---
 
+## 成果物一覧
+
+| # | 成果物 | テンプレート | 単位 | 説明 |
+|---|--------|-----------|------|------|
+| 1 | テスト計画書 | [test-plan.template.md](test-plan.template.md) | モジュール/機能ごと | テスト対象・テストケース・カバレッジ目標 |
+
+### ファイル命名規則
+
+```
+docs/artifacts/unit-test/frontend/{モジュール名}.md
+docs/artifacts/unit-test/backend/{モジュール名}.md
+例: docs/artifacts/unit-test/frontend/login-form.md
+例: docs/artifacts/unit-test/backend/user-service.md
+```
+
+テスト計画書は継続的に更新する。ファイル内の「最終更新」で履歴を管理する。
+
+---
+
 ## ディレクトリ構成
 
 ```
-rules/unit-test/              # ルール・テンプレート（ここ）
+rules/unit-test/                 # ルール・テンプレート（ここ）
 ├── INSTRUCTIONS.md
+├── test-plan.template.md
 ├── frontend/
-│   ├── INSTRUCTIONS.md
-│   └── template.md
+│   ├── INSTRUCTIONS.md          # FE テストガイド・コード例
+│   └── guidelines.md            # （将来追加用）
 └── backend/
-    ├── INSTRUCTIONS.md
-    └── template.md
+    ├── INSTRUCTIONS.md          # BE テストガイド・コード例
+    └── guidelines.md            # （将来追加用）
 
-artifacts/unit-test/          # テスト仕様書の出力先
+artifacts/unit-test/             # テスト計画書の出力先
 ├── frontend/
 └── backend/
 ```
@@ -34,7 +54,7 @@ artifacts/unit-test/          # テスト仕様書の出力先
 
 ## テスト作成の原則
 
-### FIRST原則
+### FIRST 原則
 
 | 原則 | 説明 |
 |------|------|
@@ -75,7 +95,7 @@ artifacts/unit-test/          # テスト仕様書の出力先
 
 ---
 
-## 各観点の詳細
+## コード例・詳細ガイド
 
 - [フロントエンド単体テストガイド](frontend/INSTRUCTIONS.md)
 - [バックエンド単体テストガイド](backend/INSTRUCTIONS.md)

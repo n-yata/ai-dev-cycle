@@ -13,11 +13,32 @@
 
 ---
 
+## 成果物一覧
+
+| # | 成果物 | テンプレート | 単位 | 説明 |
+|---|--------|-----------|------|------|
+| 1 | 実装計画 | [implementation-plan.template.md](implementation-plan.template.md) | 機能ごと | タスク分割・実装順序・ブランチ戦略 |
+| 2 | 環境構築手順 | [setup-guide.template.md](setup-guide.template.md) | プロジェクトごと | ローカル開発環境のセットアップ手順 |
+
+### ファイル命名規則
+
+```
+docs/artifacts/implementation/{成果物名}.md
+例: docs/artifacts/implementation/user-auth-plan.md
+例: docs/artifacts/implementation/setup-guide.md
+```
+
+設計書は継続的に更新する。ファイル内の「最終更新」で履歴を管理する。
+
+---
+
 ## ディレクトリ構成
 
 ```
-rules/implementation/         # ルール・ガイドライン（ここ）
+rules/implementation/              # ルール・ガイドライン（ここ）
 ├── INSTRUCTIONS.md
+├── implementation-plan.template.md
+├── setup-guide.template.md
 ├── frontend/
 │   ├── INSTRUCTIONS.md
 │   └── guidelines.md
@@ -25,9 +46,9 @@ rules/implementation/         # ルール・ガイドライン（ここ）
     ├── INSTRUCTIONS.md
     └── guidelines.md
 
-artifacts/implementation/     # 実装記録の出力先
-├── frontend/
-└── backend/
+artifacts/implementation/          # 成果物の出力先
+├── frontend/                      # FE ソースコード（実装本体）
+└── backend/                       # BE ソースコード（実装本体）
 ```
 
 ---
@@ -38,6 +59,7 @@ artifacts/implementation/     # 実装記録の出力先
 - [ ] 開発環境のセットアップが完了している
 - [ ] 依存パッケージ・ライブラリのバージョンが確認済み
 - [ ] ブランチ命名規則に従ったブランチを作成している（例: `feature/user-auth`）
+- [ ] 実装計画が作成・レビュー済み
 
 ---
 
@@ -63,7 +85,7 @@ artifacts/implementation/     # 実装記録の出力先
 
 ---
 
-## 各観点の詳細
+## コーディングガイドライン
 
 - [フロントエンド実装ガイドライン](frontend/guidelines.md)
 - [バックエンド実装ガイドライン](backend/guidelines.md)

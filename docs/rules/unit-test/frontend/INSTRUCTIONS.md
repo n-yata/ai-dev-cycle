@@ -86,4 +86,4 @@ test('コンポーネントが存在する', () => {
 });
 ```
 
-テンプレートは [template.md](template.md) を参照してください。
+テスト計画書のテンプレートは [test-plan.template.md](../test-plan.template.md) を参照してください。
