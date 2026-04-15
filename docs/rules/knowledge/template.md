@@ -104,8 +104,8 @@
 
 > このナレッジをもとに、各フェーズのチェックリストに追加すべき項目があれば記述する。
 
-- [ ] `docs/rules/detailed-design/README.md` のチェックリストに追加: 
-- [ ] `docs/rules/unit-test/README.md` のチェックリストに追加: 
+- [ ] `docs/rules/detailed-design/INSTRUCTIONS.md` のチェックリストに追加: 
+- [ ] `docs/rules/unit-test/INSTRUCTIONS.md` のチェックリストに追加: 
 
 ---
 

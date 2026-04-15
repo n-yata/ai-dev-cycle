@@ -9,7 +9,7 @@
 
 ```
 knowledge/                    # ナレッジの蓄積先（ここ）
-├── README.md
+├── INSTRUCTIONS.md
 ├── design-decisions/
 ├── review-findings/
 ├── test-patterns/
@@ -111,7 +111,7 @@ ls docs/knowledge/design-decisions/
 
 | カテゴリ | 説明 | テンプレートの使い方 |
 |---------|------|-----------------|
-| [design-decisions/](design-decisions/README.md) | 設計判断とその根拠。却下した選択肢も記録する | `context` と `decision` セクションを重点的に |
-| [review-findings/](review-findings/README.md) | コードレビューの指摘パターン。再発防止に使う | `pattern` と `prevention` を具体的に |
-| [test-patterns/](test-patterns/README.md) | テストで発見したバグ・効果的なテスト手法 | `reproduction` ステップを必ず書く |
-| [lessons-learned/](lessons-learned/README.md) | フェーズ・プロジェクト全体の振り返り | `what-went-well` と `what-to-improve` を対で書く |
+| [design-decisions/](design-decisions/INSTRUCTIONS.md) | 設計判断とその根拠。却下した選択肢も記録する | `context` と `decision` セクションを重点的に |
+| [review-findings/](review-findings/INSTRUCTIONS.md) | コードレビューの指摘パターン。再発防止に使う | `pattern` と `prevention` を具体的に |
+| [test-patterns/](test-patterns/INSTRUCTIONS.md) | テストで発見したバグ・効果的なテスト手法 | `reproduction` ステップを必ず書く |
+| [lessons-learned/](lessons-learned/INSTRUCTIONS.md) | フェーズ・プロジェクト全体の振り返り | `what-went-well` と `what-to-improve` を対で書く |

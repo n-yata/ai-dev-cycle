@@ -31,8 +31,8 @@ rules/
 
 | フェーズ | ガイド | 概要 |
 |---------|--------|------|
-| 詳細設計 | [detailed-design/README.md](detailed-design/README.md) | 設計ドキュメントの作成手順・チェックリスト |
-| 実装 | [implementation/README.md](implementation/README.md) | コーディングガイドライン・レビュー観点 |
-| 単体テスト | [unit-test/README.md](unit-test/README.md) | テスト原則・カバレッジ目安 |
-| 結合テスト | [integration-test/README.md](integration-test/README.md) | 結合テスト実行環境・チェックリスト |
+| 詳細設計 | [detailed-design/INSTRUCTIONS.md](detailed-design/INSTRUCTIONS.md) | 設計ドキュメントの作成手順・チェックリスト |
+| 実装 | [implementation/INSTRUCTIONS.md](implementation/INSTRUCTIONS.md) | コーディングガイドライン・レビュー観点 |
+| 単体テスト | [unit-test/INSTRUCTIONS.md](unit-test/INSTRUCTIONS.md) | テスト原則・カバレッジ目安 |
+| 結合テスト | [integration-test/INSTRUCTIONS.md](integration-test/INSTRUCTIONS.md) | 結合テスト実行環境・チェックリスト |
 | ナレッジ記録 | [knowledge/template.md](knowledge/template.md) | ナレッジ記録のテンプレート |

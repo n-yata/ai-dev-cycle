@@ -81,7 +81,7 @@ ai-dev-cycle/
 - UI/UXコンポーネント設計、状態管理設計（FE）
 - API仕様、データモデル、シーケンス図（BE）
 
-ルール → [docs/rules/detailed-design/README.md](docs/rules/detailed-design/README.md)
+ルール → [docs/rules/detailed-design/INSTRUCTIONS.md](docs/rules/detailed-design/INSTRUCTIONS.md)
 
 ---
 
@@ -90,7 +90,7 @@ ai-dev-cycle/
 詳細設計をもとにコードを書くフェーズ。  
 コーディング規約・実装ガイドラインを参照しながら進める。
 
-ルール → [docs/rules/implementation/README.md](docs/rules/implementation/README.md)
+ルール → [docs/rules/implementation/INSTRUCTIONS.md](docs/rules/implementation/INSTRUCTIONS.md)
 
 ---
 
@@ -100,7 +100,7 @@ ai-dev-cycle/
 - コンポーネントテスト、カスタムフックテスト（FE）
 - ユニットテスト、サービス層テスト（BE）
 
-ルール → [docs/rules/unit-test/README.md](docs/rules/unit-test/README.md)
+ルール → [docs/rules/unit-test/INSTRUCTIONS.md](docs/rules/unit-test/INSTRUCTIONS.md)
 
 ---
 
@@ -110,7 +110,7 @@ ai-dev-cycle/
 - E2Eテスト、API通信テスト（FE）
 - APIエンドポイントテスト、DBアクセステスト（BE）
 
-ルール → [docs/rules/integration-test/README.md](docs/rules/integration-test/README.md)
+ルール → [docs/rules/integration-test/INSTRUCTIONS.md](docs/rules/integration-test/INSTRUCTIONS.md)
 
 ---
 
@@ -145,12 +145,12 @@ ai-dev-cycle/
 | テスト実施後 | 発見したバグのパターン・効果的な手法 → `knowledge/test-patterns/` |
 | フェーズ完了後 | フェーズ全体の振り返り・教訓 → `knowledge/lessons-learned/` |
 
-詳細 → [docs/knowledge/README.md](docs/knowledge/README.md)
+詳細 → [docs/knowledge/INSTRUCTIONS.md](docs/knowledge/INSTRUCTIONS.md)
 
 ---
 
 ## 関連リンク
 
-- [成果物（artifacts）](docs/artifacts/README.md)
-- [ルール・テンプレート（rules）](docs/rules/README.md)
-- [ナレッジベース（knowledge）](docs/knowledge/README.md)
+- [成果物（artifacts）](docs/artifacts/INSTRUCTIONS.md)
+- [ルール・テンプレート（rules）](docs/rules/INSTRUCTIONS.md)
+- [ナレッジベース（knowledge）](docs/knowledge/INSTRUCTIONS.md)

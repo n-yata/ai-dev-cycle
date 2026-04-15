@@ -17,12 +17,12 @@
 
 ```
 rules/integration-test/       # ルール・テンプレート（ここ）
-├── README.md
+├── INSTRUCTIONS.md
 ├── frontend/
-│   ├── README.md
+│   ├── INSTRUCTIONS.md
 │   └── template.md
 └── backend/
-    ├── README.md
+    ├── INSTRUCTIONS.md
     └── template.md
 
 artifacts/integration-test/   # テスト仕様書の出力先
@@ -66,5 +66,5 @@ artifacts/integration-test/   # テスト仕様書の出力先
 
 ## 各観点の詳細
 
-- [フロントエンド結合テストガイド](frontend/README.md)
-- [バックエンド結合テストガイド](backend/README.md)
+- [フロントエンド結合テストガイド](frontend/INSTRUCTIONS.md)
+- [バックエンド結合テストガイド](backend/INSTRUCTIONS.md)

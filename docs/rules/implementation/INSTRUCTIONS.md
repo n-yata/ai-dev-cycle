@@ -17,12 +17,12 @@
 
 ```
 rules/implementation/         # ルール・ガイドライン（ここ）
-├── README.md
+├── INSTRUCTIONS.md
 ├── frontend/
-│   ├── README.md
+│   ├── INSTRUCTIONS.md
 │   └── guidelines.md
 └── backend/
-    ├── README.md
+    ├── INSTRUCTIONS.md
     └── guidelines.md
 
 artifacts/implementation/     # 実装記録の出力先

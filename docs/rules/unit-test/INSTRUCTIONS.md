@@ -17,12 +17,12 @@
 
 ```
 rules/unit-test/              # ルール・テンプレート（ここ）
-├── README.md
+├── INSTRUCTIONS.md
 ├── frontend/
-│   ├── README.md
+│   ├── INSTRUCTIONS.md
 │   └── template.md
 └── backend/
-    ├── README.md
+    ├── INSTRUCTIONS.md
     └── template.md
 
 artifacts/unit-test/          # テスト仕様書の出力先
@@ -77,5 +77,5 @@ artifacts/unit-test/          # テスト仕様書の出力先
 
 ## 各観点の詳細
 
-- [フロントエンド単体テストガイド](frontend/README.md)
-- [バックエンド単体テストガイド](backend/README.md)
+- [フロントエンド単体テストガイド](frontend/INSTRUCTIONS.md)
+- [バックエンド単体テストガイド](backend/INSTRUCTIONS.md)

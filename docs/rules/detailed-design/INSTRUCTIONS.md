@@ -17,12 +17,12 @@
 
 ```
 rules/detailed-design/        # ルール・テンプレート（ここ）
-├── README.md
+├── INSTRUCTIONS.md
 ├── frontend/
-│   ├── README.md
+│   ├── INSTRUCTIONS.md
 │   └── template.md
 └── backend/
-    ├── README.md
+    ├── INSTRUCTIONS.md
     └── template.md
 
 artifacts/detailed-design/    # 成果物の出力先
@@ -57,5 +57,5 @@ artifacts/detailed-design/    # 成果物の出力先
 
 ## 各観点の詳細
 
-- [フロントエンド詳細設計](frontend/README.md)
-- [バックエンド詳細設計](backend/README.md)
+- [フロントエンド詳細設計](frontend/INSTRUCTIONS.md)
+- [バックエンド詳細設計](backend/INSTRUCTIONS.md)
