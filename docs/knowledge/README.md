@@ -1,4 +1,4 @@
-# ナレッジベース（knowledge-base）
+# ナレッジベース（knowledge）
 
 開発サイクルを回すたびに得られた知識・経験を蓄積し、次のサイクルへ活かすための仕組みです。  
 「同じ失敗を繰り返さない」「良いパターンをチームで共有する」ことを目的としています。
@@ -8,13 +8,15 @@
 ## ディレクトリ構成
 
 ```
-knowledge-base/
-├── README.md              # このファイル（記録ルール）
-├── template.md            # ナレッジ記録テンプレート
-├── design-decisions/      # 設計判断とその理由
-├── review-findings/       # レビューで見つかった指摘パターン
-├── test-patterns/         # バグパターン・効果的なテスト手法
-└── lessons-learned/       # 各フェーズで得た教訓
+knowledge/                    # ナレッジの蓄積先（ここ）
+├── README.md
+├── design-decisions/
+├── review-findings/
+├── test-patterns/
+└── lessons-learned/
+
+rules/knowledge/              # ナレッジ記録テンプレート
+└── template.md
 ```
 
 ---
@@ -69,7 +71,7 @@ YYYYMMDD_短いタイトル.md
 
 ### 記録フォーマット
 
-`template.md` をコピーして使用する。  
+`docs/rules/knowledge/template.md` をコピーして使用する。  
 **最低限、以下の3点を書くこと:**
 
 1. **何が起きたか / 何を決めたか** （事実）
@@ -86,10 +88,10 @@ YYYYMMDD_短いタイトル.md
 
 ```bash
 # キーワードで検索
-grep -r "キーワード" docs/knowledge-base/
+grep -r "キーワード" docs/knowledge/
 
 # カテゴリで絞り込む
-ls docs/knowledge-base/design-decisions/
+ls docs/knowledge/design-decisions/
 ```
 
 ### 定期的に見直す

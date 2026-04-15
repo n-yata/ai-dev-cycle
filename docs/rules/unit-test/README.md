@@ -16,14 +16,18 @@
 ## ディレクトリ構成
 
 ```
-unit-test/
-├── README.md              # このファイル
+rules/unit-test/              # ルール・テンプレート（ここ）
+├── README.md
 ├── frontend/
-│   ├── README.md          # FE単体テストガイド
-│   └── template.md        # FE単体テストテンプレート
+│   ├── README.md
+│   └── template.md
 └── backend/
-    ├── README.md          # BE単体テストガイド
-    └── template.md        # BE単体テストテンプレート
+    ├── README.md
+    └── template.md
+
+artifacts/unit-test/          # テスト仕様書の出力先
+├── frontend/
+└── backend/
 ```
 
 ---

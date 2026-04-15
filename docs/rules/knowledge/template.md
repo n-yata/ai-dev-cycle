@@ -104,8 +104,8 @@
 
 > このナレッジをもとに、各フェーズのチェックリストに追加すべき項目があれば記述する。
 
-- [ ] `docs/detailed-design/README.md` のチェックリストに追加: 
-- [ ] `docs/unit-test/README.md` のチェックリストに追加: 
+- [ ] `docs/rules/detailed-design/README.md` のチェックリストに追加: 
+- [ ] `docs/rules/unit-test/README.md` のチェックリストに追加: 
 
 ---
 
@@ -116,7 +116,7 @@
 | 関連PR |  |  |
 | 関連Issue |  |  |
 | 参考記事 |  |  |
-| 関連ナレッジ |  | `docs/knowledge-base/...` |
+| 関連ナレッジ |  | `docs/knowledge/...` |
 
 ---
 

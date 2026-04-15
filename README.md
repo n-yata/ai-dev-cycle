@@ -25,25 +25,51 @@ AI開発サイクルのドキュメント基盤プロジェクト。
 
 ```
 ai-dev-cycle/
+├── src/                          # 実装ソースコード（別途配置）
 └── docs/
-    ├── detailed-design/      # フェーズ①: 詳細設計
-    │   ├── frontend/         # FE詳細設計
-    │   └── backend/          # BE詳細設計
-    ├── implementation/       # フェーズ②: 実装
-    │   ├── frontend/         # FE実装ガイドライン
-    │   └── backend/          # BE実装ガイドライン
-    ├── unit-test/            # フェーズ③: 単体テスト
-    │   ├── frontend/         # FE単体テスト
-    │   └── backend/          # BE単体テスト
-    ├── integration-test/     # フェーズ④: 結合テスト
-    │   ├── frontend/         # FE結合テスト
-    │   └── backend/          # BE結合テスト
-    └── knowledge-base/       # ナレッジベース（サイクルを回すたびに成長）
-        ├── design-decisions/ # 設計判断とその理由
-        ├── review-findings/  # レビュー指摘パターン
-        ├── test-patterns/    # バグパターン・テスト手法
-        └── lessons-learned/  # 各フェーズの教訓
+    ├── artifacts/                # 成果物の出力先
+    │   ├── detailed-design/     #   詳細設計ドキュメント
+    │   │   ├── frontend/
+    │   │   └── backend/
+    │   ├── implementation/      #   実装記録
+    │   │   ├── frontend/
+    │   │   └── backend/
+    │   ├── unit-test/           #   単体テスト仕様書
+    │   │   ├── frontend/
+    │   │   └── backend/
+    │   └── integration-test/    #   結合テスト仕様書
+    │       ├── frontend/
+    │       └── backend/
+    │
+    ├── rules/                   # ルール・テンプレート
+    │   ├── detailed-design/     #   詳細設計のルール・テンプレート
+    │   │   ├── frontend/
+    │   │   └── backend/
+    │   ├── implementation/      #   実装ガイドライン
+    │   │   ├── frontend/
+    │   │   └── backend/
+    │   ├── unit-test/           #   単体テストのルール・テンプレート
+    │   │   ├── frontend/
+    │   │   └── backend/
+    │   ├── integration-test/    #   結合テストのルール・テンプレート
+    │   │   ├── frontend/
+    │   │   └── backend/
+    │   └── knowledge/           #   ナレッジ記録テンプレート
+    │
+    └── knowledge/               # ナレッジベース（サイクルを回すたびに成長）
+        ├── design-decisions/    #   設計判断とその理由
+        ├── review-findings/     #   レビュー指摘パターン
+        ├── test-patterns/       #   バグパターン・テスト手法
+        └── lessons-learned/     #   各フェーズの教訓
 ```
+
+### 3つの柱
+
+| ディレクトリ | 役割 | 説明 |
+|------------|------|------|
+| `docs/artifacts/` | 成果物 | 各フェーズで生成されるドキュメント成果物の出力先 |
+| `docs/rules/` | ルール | テンプレート、ガイドライン、チェックリスト。成果物を作る際の「型」 |
+| `docs/knowledge/` | ナレッジ | 開発サイクルで得た知見・教訓の蓄積 |
 
 ---
 
@@ -55,7 +81,7 @@ ai-dev-cycle/
 - UI/UXコンポーネント設計、状態管理設計（FE）
 - API仕様、データモデル、シーケンス図（BE）
 
-詳細 → [docs/detailed-design/README.md](docs/detailed-design/README.md)
+ルール → [docs/rules/detailed-design/README.md](docs/rules/detailed-design/README.md)
 
 ---
 
@@ -64,7 +90,7 @@ ai-dev-cycle/
 詳細設計をもとにコードを書くフェーズ。  
 コーディング規約・実装ガイドラインを参照しながら進める。
 
-詳細 → [docs/implementation/README.md](docs/implementation/README.md)
+ルール → [docs/rules/implementation/README.md](docs/rules/implementation/README.md)
 
 ---
 
@@ -74,7 +100,7 @@ ai-dev-cycle/
 - コンポーネントテスト、カスタムフックテスト（FE）
 - ユニットテスト、サービス層テスト（BE）
 
-詳細 → [docs/unit-test/README.md](docs/unit-test/README.md)
+ルール → [docs/rules/unit-test/README.md](docs/rules/unit-test/README.md)
 
 ---
 
@@ -84,17 +110,16 @@ ai-dev-cycle/
 - E2Eテスト、API通信テスト（FE）
 - APIエンドポイントテスト、DBアクセステスト（BE）
 
-詳細 → [docs/integration-test/README.md](docs/integration-test/README.md)
+ルール → [docs/rules/integration-test/README.md](docs/rules/integration-test/README.md)
 
 ---
 
 ## 開発フロー
 
-1. **詳細設計ドキュメントを作成** → `docs/detailed-design/` のテンプレートを使用
-2. **実装ガイドラインを確認** → `docs/implementation/` のガイドラインに従って実装
-3. **単体テストを作成・実行** → `docs/unit-test/` のテンプレートを使用
-4. **結合テストを作成・実行** → `docs/integration-test/` のテンプレートを使用
-5. **ナレッジを記録する** → `docs/knowledge-base/` に学びを蓄積
+1. **ルールを確認** → `docs/rules/` でテンプレート・ガイドラインを参照
+2. **成果物を作成** → テンプレートをコピーし `docs/artifacts/` に配置
+3. **各フェーズを実施** → 詳細設計 → 実装 → 単体テスト → 結合テスト
+4. **ナレッジを記録** → `docs/knowledge/` に学びを蓄積
 
 ---
 
@@ -115,19 +140,17 @@ ai-dev-cycle/
 
 | フェーズ完了後 | 記録するナレッジ |
 |-------------|---------------|
-| 詳細設計レビュー後 | 設計判断の理由・却下した選択肢 → `design-decisions/` |
-| コードレビュー後 | 繰り返し出た指摘パターン → `review-findings/` |
-| テスト実施後 | 発見したバグのパターン・効果的な手法 → `test-patterns/` |
-| フェーズ完了後 | フェーズ全体の振り返り・教訓 → `lessons-learned/` |
+| 詳細設計レビュー後 | 設計判断の理由・却下した選択肢 → `knowledge/design-decisions/` |
+| コードレビュー後 | 繰り返し出た指摘パターン → `knowledge/review-findings/` |
+| テスト実施後 | 発見したバグのパターン・効果的な手法 → `knowledge/test-patterns/` |
+| フェーズ完了後 | フェーズ全体の振り返り・教訓 → `knowledge/lessons-learned/` |
 
-詳細 → [docs/knowledge-base/README.md](docs/knowledge-base/README.md)
+詳細 → [docs/knowledge/README.md](docs/knowledge/README.md)
 
 ---
 
 ## 関連リンク
 
-- [詳細設計ガイド](docs/detailed-design/README.md)
-- [実装ガイドライン](docs/implementation/README.md)
-- [単体テストガイド](docs/unit-test/README.md)
-- [結合テストガイド](docs/integration-test/README.md)
-- [ナレッジベース](docs/knowledge-base/README.md)
+- [成果物（artifacts）](docs/artifacts/README.md)
+- [ルール・テンプレート（rules）](docs/rules/README.md)
+- [ナレッジベース（knowledge）](docs/knowledge/README.md)

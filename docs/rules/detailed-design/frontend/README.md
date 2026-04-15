@@ -53,11 +53,11 @@
 
 ## 設計ドキュメントの保存場所
 
-設計ドキュメントは以下の命名規則でこのディレクトリに保存する。
+設計ドキュメントは以下の命名規則で成果物ディレクトリに保存する。
 
 ```
-frontend/YYYYMMDD_機能名.md
-例: frontend/20260414_user-login.md
+docs/artifacts/detailed-design/frontend/YYYYMMDD_機能名.md
+例: docs/artifacts/detailed-design/frontend/20260414_user-login.md
 ```
 
 テンプレートは [template.md](template.md) を使用してください。

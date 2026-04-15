@@ -16,14 +16,18 @@
 ## ディレクトリ構成
 
 ```
-integration-test/
-├── README.md              # このファイル
+rules/integration-test/       # ルール・テンプレート（ここ）
+├── README.md
 ├── frontend/
-│   ├── README.md          # FE結合テストガイド
-│   └── template.md        # FE結合テストテンプレート
+│   ├── README.md
+│   └── template.md
 └── backend/
-    ├── README.md          # BE結合テストガイド
-    └── template.md        # BE結合テストテンプレート
+    ├── README.md
+    └── template.md
+
+artifacts/integration-test/   # テスト仕様書の出力先
+├── frontend/
+└── backend/
 ```
 
 ---

@@ -54,11 +54,11 @@ Client → API Gateway → Service Layer → Repository → DB
 
 ## 設計ドキュメントの保存場所
 
-設計ドキュメントは以下の命名規則でこのディレクトリに保存する。
+設計ドキュメントは以下の命名規則で成果物ディレクトリに保存する。
 
 ```
-backend/YYYYMMDD_機能名.md
-例: backend/20260414_user-auth.md
+docs/artifacts/detailed-design/backend/YYYYMMDD_機能名.md
+例: docs/artifacts/detailed-design/backend/20260414_user-auth.md
 ```
 
 テンプレートは [template.md](template.md) を使用してください。

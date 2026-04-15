@@ -16,14 +16,18 @@
 ## ディレクトリ構成
 
 ```
-implementation/
-├── README.md              # このファイル
+rules/implementation/         # ルール・ガイドライン（ここ）
+├── README.md
 ├── frontend/
-│   ├── README.md          # FE実装ガイド概要
-│   └── guidelines.md      # FEコーディングガイドライン
+│   ├── README.md
+│   └── guidelines.md
 └── backend/
-    ├── README.md          # BE実装ガイド概要
-    └── guidelines.md      # BEコーディングガイドライン
+    ├── README.md
+    └── guidelines.md
+
+artifacts/implementation/     # 実装記録の出力先
+├── frontend/
+└── backend/
 ```
 
 ---

@@ -16,14 +16,18 @@
 ## ディレクトリ構成
 
 ```
-detailed-design/
-├── README.md              # このファイル
+rules/detailed-design/        # ルール・テンプレート（ここ）
+├── README.md
 ├── frontend/
-│   ├── README.md          # FE詳細設計ガイド
-│   └── template.md        # FE詳細設計テンプレート
+│   ├── README.md
+│   └── template.md
 └── backend/
-    ├── README.md          # BE詳細設計ガイド
-    └── template.md        # BE詳細設計テンプレート
+    ├── README.md
+    └── template.md
+
+artifacts/detailed-design/    # 成果物の出力先
+├── frontend/
+└── backend/
 ```
 
 ---
@@ -31,7 +35,7 @@ detailed-design/
 ## 詳細設計ドキュメントの作成手順
 
 1. 対象（FE/BE）に応じたテンプレートをコピーする
-2. ファイル名は `YYYYMMDD_機能名.md` の形式で保存する（例: `20260414_user-auth.md`）
+2. ファイル名は `YYYYMMDD_機能名.md` の形式で `docs/artifacts/detailed-design/` 配下に保存する（例: `20260414_user-auth.md`）
 3. テンプレートの各セクションを埋める
 4. チームレビューを実施する
 5. 承認後、実装フェーズへ移行する
