@@ -115,3 +115,4 @@ ls docs/knowledge/design-decisions/
 | [review-findings/](review-findings/INSTRUCTIONS.md) | コードレビューの指摘パターン。再発防止に使う | `pattern` と `prevention` を具体的に |
 | [test-patterns/](test-patterns/INSTRUCTIONS.md) | テストで発見したバグ・効果的なテスト手法 | `reproduction` ステップを必ず書く |
 | [lessons-learned/](lessons-learned/INSTRUCTIONS.md) | フェーズ・プロジェクト全体の振り返り | `what-went-well` と `what-to-improve` を対で書く |
+| [reflected/](reflected/INSTRUCTIONS.md) | `/reflect-knowledge` でルールに反映済みのナレッジ | 参照用。編集する場合は元のカテゴリに戻してから |
