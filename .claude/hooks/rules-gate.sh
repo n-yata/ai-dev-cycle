@@ -12,8 +12,8 @@ mkdir -p "$STATE_DIR" 2>/dev/null
 # stdin から hook input を読み取る
 INPUT=$(cat)
 
-# tool_input.file_path を抽出（jq なし簡易パース）
-FILE_PATH=$(echo "$INPUT" | grep -oP '"file_path"\s*:\s*"[^"]*"' | head -1 | sed 's/.*"\([^"]*\)"$/\1/')
+# tool_input.file_path を抽出（POSIX 互換の簡易パース）
+FILE_PATH=$(echo "$INPUT" | sed -n 's/.*"file_path"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1)
 
 # docs/artifacts/ 配下でなければ何もしない
 if ! echo "$FILE_PATH" | grep -q 'docs/artifacts/'; then
@@ -21,7 +21,7 @@ if ! echo "$FILE_PATH" | grep -q 'docs/artifacts/'; then
 fi
 
 # フェーズを抽出: docs/artifacts/PHASE/... → PHASE
-PHASE=$(echo "$FILE_PATH" | grep -oP 'docs/artifacts/\K[^/]+')
+PHASE=$(echo "$FILE_PATH" | sed -n 's|.*docs/artifacts/\([^/]*\).*|\1|p')
 
 if [ -z "$PHASE" ]; then
   exit 0
@@ -39,7 +39,7 @@ case "$PHASE" in
 esac
 
 # 対象領域（frontend/backend）を抽出
-DOMAIN=$(echo "$FILE_PATH" | grep -oP "docs/artifacts/$PHASE/\K[^/]+")
+DOMAIN=$(echo "$FILE_PATH" | sed -n "s|.*docs/artifacts/$PHASE/\([^/]*\).*|\1|p")
 
 # セッション内で既にルール読了済みかチェック
 STATE_KEY="${PHASE}"
