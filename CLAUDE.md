@@ -12,12 +12,19 @@
 
 | フェーズ | 格納先 | ルール参照先 |
 |---------|--------|------------|
+| 要件定義 | `docs/artifacts/requirements/` | `docs/rules/requirements/INSTRUCTIONS.md` |
 | 基本設計 | `docs/artifacts/basic-design/` | `docs/rules/basic-design/INSTRUCTIONS.md` |
 | 詳細設計 | `docs/artifacts/detailed-design/frontend/` or `backend/` | `docs/rules/detailed-design/INSTRUCTIONS.md` |
 | 実装計画（進行中） | `docs/artifacts/implementation/plans/` | `docs/rules/implementation/INSTRUCTIONS.md` |
 | 実装計画（完了済み） | `docs/artifacts/implementation/done/` | 実装完了後に `plans/` から移動する |
 | 単体テスト | `docs/artifacts/unit-test/frontend/` or `backend/` | `docs/rules/unit-test/` |
 | 結合テスト | `docs/artifacts/integration-test/frontend/` or `backend/` | `docs/rules/integration-test/` |
+
+### 要件定義の成果物ルール（抜粋）
+
+- ファイル名に日付は付けない（`todo-app.md`, `user-auth.md` 等）
+- テンプレート: `docs/rules/requirements/template.md` を使用
+- 詳細は `docs/rules/requirements/INSTRUCTIONS.md` を参照
 
 ### 基本設計の成果物ルール（抜粋）
 
@@ -64,7 +71,7 @@
 ### フェーズ順序
 
 ```
-フェーズ０: 基本設計  →  フェーズ①: 詳細設計  →  フェーズ②: 実装  →  フェーズ③: 単体テスト  →  フェーズ④: 結合テスト
+フェーズ０: 要件定義  →  フェーズ①: 基本設計  →  フェーズ②: 詳細設計  →  フェーズ③: 実装  →  フェーズ④: 単体テスト  →  フェーズ⑤: 結合テスト
 ```
 
 各フェーズの開始条件・完了チェックリストは `docs/artifacts/PHASE_STATUS.md` に定義されている。
