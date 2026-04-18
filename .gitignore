@@ -47,6 +47,8 @@ out/
 .claude/settings.local.json
 .claude/.knowledge-counter
 .claude/.rules-gate-state/
+.claude/worktrees/
+.claude/worktrees/
 
 # =========================
 # Misc

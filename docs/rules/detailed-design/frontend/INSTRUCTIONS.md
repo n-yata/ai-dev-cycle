@@ -64,9 +64,31 @@
 ## 設計ドキュメントの保存場所
 
 ```
-docs/artifacts/detailed-design/frontend/{成果物名}.md
-例: docs/artifacts/detailed-design/frontend/screen-flow.md
-例: docs/artifacts/detailed-design/frontend/login.md
+docs/artifacts/detailed-design/frontend/{カテゴリ}/{成果物名}.md
+
+カテゴリ別格納先:
+  screen/   → screen-flow.md, {画面名}.md
+
+例: docs/artifacts/detailed-design/frontend/screen/screen-flow.md
+例: docs/artifacts/detailed-design/frontend/screen/login.md
 ```
 
 設計書は継続的に更新する。ファイル内の「最終更新」で履歴を管理する。
+
+---
+
+## ナレッジからの追加ルール
+
+<!-- このセクションは /reflect-knowledge コマンドにより自動追記されます -->
+
+### Todoアプリ技術スタック選定（2026-04-16）
+
+> 出典: `docs/knowledge/reflected/design-decisions/20260416_todo-app-tech-stack-design.md`
+
+**Do:**
+- CRUDスコープのアプリでは、サーバー状態管理は TanStack Query に任せ、クライアント状態のみ useState で管理する
+- 環境変数は `VITE_*` プレフィックスで必ず外出しする（API エンドポイントのハードコード禁止）
+
+**Don't:**
+- TanStack Query で管理できるサーバー状態に Redux / Zustand を追加しない
+- axios をデフォルトで導入しない（標準 fetch で十分なケースが多い）

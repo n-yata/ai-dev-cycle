@@ -55,7 +55,12 @@ rules/detailed-design/        # ルール・テンプレート（ここ）
 
 artifacts/detailed-design/    # 成果物の出力先
 ├── frontend/
+│   └── screen/               # 画面遷移図・画面設計書
 └── backend/
+    ├── entity/               # エンティティ関連図・エンティティ定義
+    ├── api/                  # API一覧・API処理設計書
+    ├── error/                # エラーコード一覧
+    └── external/             # 外部連携IF定義
 ```
 
 ---
@@ -105,3 +110,23 @@ artifacts/detailed-design/    # 成果物の出力先
 
 - [フロントエンド詳細設計](frontend/INSTRUCTIONS.md)
 - [バックエンド詳細設計](backend/INSTRUCTIONS.md)
+
+---
+
+## ナレッジからの追加ルール
+
+<!-- このセクションは /reflect-knowledge コマンドにより自動追記されます -->
+
+### サブエージェント委譲時のテンプレート規約遵守（2026-04-16）
+
+> 出典: `docs/knowledge/reflected/lessons-learned/20260416_subagent-delegation-template-compliance.md`
+
+**Do:**
+- サブエージェントへのドキュメント作成指示には、使用するテンプレートのパスを必ず明記する
+- 「テンプレートの構造（セクション・表形式・図）を必ず維持すること」と明示する
+- 作成ファイルと対応テンプレートの対応表を指示に含める
+- 委譲前に `docs/rules/` の該当 INSTRUCTIONS を自分で確認してから指示を書く
+
+**Don't:**
+- 「設計書を作って」「詳細設計を作って」だけの曖昧な指示でサブエージェントに委譲しない
+- CLAUDE.md にルールを追記する際、既存の `docs/rules/` との整合性を確認せずに書かない

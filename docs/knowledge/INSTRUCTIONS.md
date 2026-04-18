@@ -109,10 +109,35 @@ ls docs/knowledge/design-decisions/
 
 ## カテゴリ別ガイド
 
-| カテゴリ | 説明 | テンプレートの使い方 |
-|---------|------|-----------------|
-| [design-decisions/](design-decisions/INSTRUCTIONS.md) | 設計判断とその根拠。却下した選択肢も記録する | `context` と `decision` セクションを重点的に |
-| [review-findings/](review-findings/INSTRUCTIONS.md) | コードレビューの指摘パターン。再発防止に使う | `pattern` と `prevention` を具体的に |
-| [test-patterns/](test-patterns/INSTRUCTIONS.md) | テストで発見したバグ・効果的なテスト手法 | `reproduction` ステップを必ず書く |
-| [lessons-learned/](lessons-learned/INSTRUCTIONS.md) | フェーズ・プロジェクト全体の振り返り | `what-went-well` と `what-to-improve` を対で書く |
-| [reflected/](reflected/INSTRUCTIONS.md) | `/reflect-knowledge` でルールに反映済みのナレッジ | 参照用。編集する場合は元のカテゴリに戻してから |
+### design-decisions/ — 設計判断とその根拠
+
+- アーキテクチャの選択・技術スタックの決定・設計パターンの採用
+- 非機能要件のトレードオフ（速度 vs. 保守性など）
+- 意図的に「やらないこと」にした判断
+- **最重要**: 却下した選択肢と理由を必ず残す
+
+### review-findings/ — コードレビューの指摘パターン
+
+- 複数のPRで繰り返し出た指摘
+- 一目では気づきにくいセキュリティ・パフォーマンスの問題
+- 「良い例 / 悪い例」として共有する価値のあるコードパターン
+- **最重要**: 抽象的な教訓より具体的なビフォー/アフターコードで示す
+
+### test-patterns/ — バグパターン・効果的なテスト手法
+
+- 単体テスト・結合テストで発見されたバグのパターンと根本原因
+- 「このテストを書いておけばよかった」という気づき
+- 効果的だったテスト手法・モック戦略
+- **最重要**: 再現手順と防ぐためのテストコードをセットで残す
+
+### lessons-learned/ — フェーズ・プロジェクト全体の振り返り
+
+- フェーズ完了後の振り返り（KPT形式可）
+- 予定より時間がかかった作業の原因と対策
+- チームのコミュニケーションや意思決定に関する学び
+- **最重要**: 「気をつける」より具体的な次のアクションを書く
+
+### reflected/ — ルール反映済みナレッジ（参照用）
+
+`/reflect-knowledge` で `docs/rules/` に反映済みのファイルを格納。参照用なので削除しないこと。
+編集が必要な場合は元のカテゴリに戻してから編集し、再度 `/reflect-knowledge` を実行する。

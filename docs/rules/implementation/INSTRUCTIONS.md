@@ -23,9 +23,10 @@
 ### ファイル命名規則
 
 ```
-docs/artifacts/implementation/{成果物名}.md
-例: docs/artifacts/implementation/user-auth-plan.md
-例: docs/artifacts/implementation/setup-guide.md
+docs/artifacts/implementation/plans/{機能名}-plan.md   # 実装計画
+docs/artifacts/implementation/setup-guide.md           # 環境構築手順（プロジェクト直下）
+例: docs/artifacts/implementation/plans/todo-app-plan.md
+例: docs/artifacts/implementation/plans/user-auth-plan.md
 ```
 
 設計書は継続的に更新する。ファイル内の「最終更新」で履歴を管理する。
@@ -47,8 +48,8 @@ rules/implementation/              # ルール・ガイドライン（ここ）
     └── guidelines.md
 
 artifacts/implementation/          # 成果物の出力先
-├── frontend/                      # FE ソースコード（実装本体）
-└── backend/                       # BE ソースコード（実装本体）
+├── plans/                         # 実装計画書（進行中）
+└── done/                          # 実装計画書（完了済み・plans/ から移動）
 ```
 
 ---
@@ -82,6 +83,7 @@ artifacts/implementation/          # 成果物の出力先
 3. **可読性**: 変数名・関数名が意図を正確に表しているか
 4. **保守性**: 変更に対して適切な設計になっているか
 5. **パフォーマンス**: 不必要な処理・N+1問題がないか
+6. **ルール整合性**: CLAUDE.md・INSTRUCTIONS.md・artifacts のパスやルールが矛盾していないか
 
 ---
 
@@ -89,3 +91,30 @@ artifacts/implementation/          # 成果物の出力先
 
 - [フロントエンド実装ガイドライン](frontend/guidelines.md)
 - [バックエンド実装ガイドライン](backend/guidelines.md)
+
+---
+
+## ナレッジからの追加ルール
+
+<!-- このセクションは /reflect-knowledge コマンドにより自動追記されます -->
+
+### ルール間の矛盾検出（2026-04-16）
+
+> 出典: `docs/knowledge/reflected/review-findings/20260416_rule-inconsistency-detection.md`
+
+**Do:**
+- 新しいフェーズのルールを INSTRUCTIONS.md に追加するとき、CLAUDE.md との整合性を必ず確認する
+- 成果物の格納先を変更するときは CLAUDE.md・INSTRUCTIONS.md・artifacts の3箇所を同時に更新する
+
+**Don't:**
+- CLAUDE.md だけ、または INSTRUCTIONS.md だけを更新してルール変更を完結させない
+
+---
+
+## 実装計画の完了時の運用
+
+実装が完了した計画書は `plans/` から `done/` に移動する。
+
+```bash
+mv docs/artifacts/implementation/plans/{機能名}-plan.md docs/artifacts/implementation/done/
+```

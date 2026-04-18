@@ -76,13 +76,37 @@
 ## 設計ドキュメントの保存場所
 
 ```
-docs/artifacts/detailed-design/backend/{成果物名}.md
-例: docs/artifacts/detailed-design/backend/entity-relationship.md
-例: docs/artifacts/detailed-design/backend/users.md
-例: docs/artifacts/detailed-design/backend/api-list.md
-例: docs/artifacts/detailed-design/backend/create-user.md
-例: docs/artifacts/detailed-design/backend/error-codes.md
-例: docs/artifacts/detailed-design/backend/stripe.md
+docs/artifacts/detailed-design/backend/{カテゴリ}/{成果物名}.md
+
+カテゴリ別格納先:
+  entity/   → entity-relationship.md, {エンティティ名}.md
+  api/      → api-list.md, {api名}.md
+  error/    → error-codes.md
+  external/ → {サービス名}.md
+
+例: docs/artifacts/detailed-design/backend/entity/entity-relationship.md
+例: docs/artifacts/detailed-design/backend/entity/users.md
+例: docs/artifacts/detailed-design/backend/api/api-list.md
+例: docs/artifacts/detailed-design/backend/api/create-user.md
+例: docs/artifacts/detailed-design/backend/error/error-codes.md
+例: docs/artifacts/detailed-design/backend/external/stripe.md
 ```
 
 設計書は継続的に更新する。ファイル内の「最終更新」で履歴を管理する。
+
+---
+
+## ナレッジからの追加ルール
+
+<!-- このセクションは /reflect-knowledge コマンドにより自動追記されます -->
+
+### Todoアプリ技術スタック選定（2026-04-16）
+
+> 出典: `docs/knowledge/reflected/design-decisions/20260416_todo-app-tech-stack-design.md`
+
+**Do:**
+- CRUDスコープのアプリでは 3層構造（handler / service / repository）を起点にする
+- 環境変数は `os.Getenv` で必ず外出しする（エンドポイント・シークレットのハードコード禁止）
+
+**Don't:**
+- CRUD のみのスコープで Clean Architecture を採用しない（ボイラープレートが過剰になる）
