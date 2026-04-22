@@ -55,12 +55,24 @@ rules/detailed-design/        # ルール・テンプレート（ここ）
 
 artifacts/detailed-design/    # 成果物の出力先
 ├── frontend/
-│   └── screen/               # 画面遷移図・画面設計書
+│   └── screen/
+│       ├── screen-flow.md        # 画面遷移図（一覧）
+│       └── screens/              # 個別画面設計書
+│           ├── {画面名}.md
+│           └── ...
 └── backend/
-    ├── entity/               # エンティティ関連図・エンティティ定義
-    ├── api/                  # API一覧・API処理設計書
-    ├── error/                # エラーコード一覧
-    └── external/             # 外部連携IF定義
+    ├── entity/
+    │   ├── entity-relationship.md  # エンティティ関連図（一覧）
+    │   └── entities/               # 個別エンティティ定義
+    │       ├── {エンティティ名}.md
+    │       └── ...
+    ├── api/
+    │   ├── api-list.md             # API一覧
+    │   └── designs/                # 個別API処理設計書
+    │       ├── {api名}.md
+    │       └── ...
+    ├── error/                      # エラーコード一覧
+    └── external/                   # 外部連携IF定義
 ```
 
 ---
@@ -110,6 +122,15 @@ artifacts/detailed-design/    # 成果物の出力先
 
 - [フロントエンド詳細設計](frontend/INSTRUCTIONS.md)
 - [バックエンド詳細設計](backend/INSTRUCTIONS.md)
+
+---
+
+## 利用可能な MCP ツール
+
+| ツール | 用途 | 使うタイミング |
+|--------|------|--------------|
+| `sequential-thinking` | 複雑な設計判断の構造化推論 | API 設計・データモデル・コンポーネント構成で複数案を比較検討するとき |
+| `fetch` | ライブラリ仕様・外部 API ドキュメントの参照 | 外部サービスとの連携仕様や、使用ライブラリの最新 API を確認するとき |
 
 ---
 

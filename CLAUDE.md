@@ -12,42 +12,45 @@
 
 | フェーズ | 格納先 | ルール参照先 |
 |---------|--------|------------|
-| 要件定義 | `docs/artifacts/requirements/` | `docs/rules/requirements/INSTRUCTIONS.md` |
-| 基本設計 | `docs/artifacts/basic-design/` | `docs/rules/basic-design/INSTRUCTIONS.md` |
-| 詳細設計 | `docs/artifacts/detailed-design/frontend/` or `backend/` | `docs/rules/detailed-design/INSTRUCTIONS.md` |
-| 実装計画（進行中） | `docs/artifacts/implementation/plans/` | `docs/rules/implementation/INSTRUCTIONS.md` |
-| 実装計画（完了済み） | `docs/artifacts/implementation/done/` | 実装完了後に `plans/` から移動する |
-| 単体テスト | `docs/artifacts/unit-test/frontend/` or `backend/` | `docs/rules/unit-test/` |
-| 結合テスト | `docs/artifacts/integration-test/frontend/` or `backend/` | `docs/rules/integration-test/` |
+| 要件定義 | `docs/artifacts/0_requirements/` | `docs/rules/0_requirements/INSTRUCTIONS.md` |
+| 基本設計 | `docs/artifacts/1_basic-design/` | `docs/rules/1_basic-design/INSTRUCTIONS.md` |
+| 詳細設計 | `docs/artifacts/2_detailed-design/frontend/` or `backend/` | `docs/rules/2_detailed-design/INSTRUCTIONS.md` |
+| 実装計画（進行中） | `docs/artifacts/3_implementation/plans/` | `docs/rules/3_implementation/INSTRUCTIONS.md` |
+| 実装計画（完了済み） | `docs/artifacts/3_implementation/done/` | 実装完了後に `plans/` から移動する |
+| 単体テスト | `docs/artifacts/4_unit-test/frontend/` or `backend/` | `docs/rules/4_unit-test/` |
+| 結合テスト | `docs/artifacts/5_integration-test/frontend/` or `backend/` | `docs/rules/5_integration-test/` |
 
 ### 要件定義の成果物ルール（抜粋）
 
 - ファイル名に日付は付けない（`todo-app.md`, `user-auth.md` 等）
-- テンプレート: `docs/rules/requirements/template.md` を使用
-- 詳細は `docs/rules/requirements/INSTRUCTIONS.md` を参照
+- テンプレート: `docs/rules/0_requirements/template.md` を使用
+- 詳細は `docs/rules/0_requirements/INSTRUCTIONS.md` を参照
 
 ### 基本設計の成果物ルール（抜粋）
 
 - ファイル名に日付は付けない（`todo-app.md`, `user-auth.md` 等）
-- テンプレート: `docs/rules/basic-design/template.md` を使用
-- 詳細は `docs/rules/basic-design/INSTRUCTIONS.md` を参照
+- テンプレート: `docs/rules/1_basic-design/template.md` を使用
+- 詳細は `docs/rules/1_basic-design/INSTRUCTIONS.md` を参照
 
 ### 詳細設計の成果物ルール（抜粋）
 
 - 成果物は**1ドキュメント1ファイル**（まとめて1ファイルにしない）
 - ファイル名に日付は付けない（`api-list.md`, `entity-relationship.md` 等）
-- テンプレート: `docs/rules/detailed-design/{frontend or backend}/*.template.md` を使用
+- テンプレート: `docs/rules/2_detailed-design/{frontend or backend}/*.template.md` を使用
 - **カテゴリ別サブディレクトリに格納する**:
 
-  | 対象 | カテゴリ | 格納先 |
-  |------|---------|--------|
-  | BE | エンティティ関連図・定義 | `backend/entity/` |
-  | BE | API一覧・処理設計書 | `backend/api/` |
+  | 対象 | 成果物 | 格納先 |
+  |------|--------|--------|
+  | FE | 画面遷移図（一覧） | `frontend/screen/` |
+  | FE | 個別画面設計書 | `frontend/screen/screens/` |
+  | BE | エンティティ関連図（一覧） | `backend/entity/` |
+  | BE | 個別エンティティ定義 | `backend/entity/entities/` |
+  | BE | API一覧 | `backend/api/` |
+  | BE | 個別API処理設計書 | `backend/api/designs/` |
   | BE | エラーコード一覧 | `backend/error/` |
   | BE | 外部連携IF定義 | `backend/external/` |
-  | FE | 画面遷移図・画面設計書 | `frontend/screen/` |
 
-- 詳細は `docs/rules/detailed-design/INSTRUCTIONS.md` を参照
+- 詳細は `docs/rules/2_detailed-design/INSTRUCTIONS.md` を参照
 
 ## ウォーターフォール フェーズゲート管理
 
@@ -66,6 +69,7 @@
    - 完了チェックリストを全項目チェックする
    - シャビに完了報告し、承認を得る
    - 承認後、ステータスを `COMPLETE`、完了日を記入する
+   - **ステータスを `COMPLETE` に更新したら、必ずコミットを実行する**
 4. **フェーズ完了はシャビが承認して初めて確定する**（自己判断で `COMPLETE` にしない）
 
 ### フェーズ順序

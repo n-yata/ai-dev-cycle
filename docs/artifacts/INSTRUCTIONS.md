@@ -9,17 +9,20 @@
 
 ```
 artifacts/
-├── basic-design/         # フェーズ０: 基本設計ドキュメント
-├── detailed-design/      # フェーズ①: 詳細設計ドキュメント
+├── 0_requirements/       # フェーズ０: 要件定義書
+├── 1_basic-design/       # フェーズ①: 基本設計書
+├── 2_detailed-design/    # フェーズ②: 詳細設計ドキュメント
 │   ├── frontend/
 │   └── backend/
-├── implementation/       # フェーズ②: 実装記録
+├── 3_implementation/     # フェーズ③: 実装計画・記録
+│   ├── frontend/
+│   ├── backend/
+│   ├── plans/            # 実装計画（進行中）
+│   └── done/             # 実装計画（完了済み）
+├── 4_unit-test/          # フェーズ④: 単体テスト仕様書
 │   ├── frontend/
 │   └── backend/
-├── unit-test/            # フェーズ③: 単体テスト仕様書
-│   ├── frontend/
-│   └── backend/
-└── integration-test/     # フェーズ④: 結合テスト仕様書
+└── 5_integration-test/   # フェーズ⑤: 結合テスト仕様書
     ├── frontend/
     └── backend/
 ```
@@ -54,9 +57,10 @@ artifacts/
 
 | フェーズ | 保存先 | ルール参照先 |
 |---------|--------|------------|
-| 基本設計 | `basic-design/` | [basic-design/INSTRUCTIONS.md](../rules/basic-design/INSTRUCTIONS.md) |
-| 詳細設計 | `detailed-design/frontend/` or `backend/` | [detailed-design/INSTRUCTIONS.md](../rules/detailed-design/INSTRUCTIONS.md) |
-| 実装計画 | `implementation/plans/` | [implementation/INSTRUCTIONS.md](../rules/implementation/INSTRUCTIONS.md) |
-| 実装 | `implementation/frontend/` or `backend/` | [implementation/INSTRUCTIONS.md](../rules/implementation/INSTRUCTIONS.md) |
-| 単体テスト | `unit-test/frontend/` or `backend/` | [unit-test/INSTRUCTIONS.md](../rules/unit-test/INSTRUCTIONS.md) |
-| 結合テスト | `integration-test/frontend/` or `backend/` | [integration-test/INSTRUCTIONS.md](../rules/integration-test/INSTRUCTIONS.md) |
+| 要件定義 | `0_requirements/` | [0_requirements/INSTRUCTIONS.md](../rules/0_requirements/INSTRUCTIONS.md) |
+| 基本設計 | `1_basic-design/` | [1_basic-design/INSTRUCTIONS.md](../rules/1_basic-design/INSTRUCTIONS.md) |
+| 詳細設計 | `2_detailed-design/frontend/` or `backend/` | [2_detailed-design/INSTRUCTIONS.md](../rules/2_detailed-design/INSTRUCTIONS.md) |
+| 実装計画 | `3_implementation/plans/` | [3_implementation/INSTRUCTIONS.md](../rules/3_implementation/INSTRUCTIONS.md) |
+| 実装 | `3_implementation/frontend/` or `backend/` | [3_implementation/INSTRUCTIONS.md](../rules/3_implementation/INSTRUCTIONS.md) |
+| 単体テスト | `4_unit-test/frontend/` or `backend/` | [4_unit-test/INSTRUCTIONS.md](../rules/4_unit-test/INSTRUCTIONS.md) |
+| 結合テスト | `5_integration-test/frontend/` or `backend/` | [5_integration-test/INSTRUCTIONS.md](../rules/5_integration-test/INSTRUCTIONS.md) |

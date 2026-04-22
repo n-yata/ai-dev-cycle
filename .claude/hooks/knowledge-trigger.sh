@@ -2,26 +2,23 @@
 # =============================================================================
 # knowledge-trigger.sh — UserPromptSubmit hook
 # 会話ターンをカウントし、10ターンごとにナレッジ書き込みリマインドを注入する。
-# /clear が検出された場合も書き込みリマインドを注入する。
 # =============================================================================
 
 COUNTER_FILE="${CLAUDE_PROJECT_DIR:-.}/.claude/.knowledge-counter"
+FLAG_FILE="${CLAUDE_PROJECT_DIR:-.}/.claude/.post-compact-pending"
 
-# stdin から hook input を読み取る
-INPUT=$(cat)
-
-# /clear コマンドの検出（JSON内の prompt フィールドを簡易パース）
-# jq がないため grep で検出
-if echo "$INPUT" | grep -qE '"prompt"\s*:\s*"\s*/clear'; then
+# /compact 後フラグの検出
+if [ -f "$FLAG_FILE" ]; then
+  rm -f "$FLAG_FILE"
   cat <<'MSG'
-[KNOWLEDGE_TRIGGER] /clear が実行されます。
-会話で得られたナレッジがあれば docs/knowledge/ に書き込んでください。
+[KNOWLEDGE_TRIGGER] 前回の /compact 後、最初のターンです。
+compact サマリーをもとに、この会話で得られたナレッジがあれば docs/knowledge/ に書き込んでください。
 - テンプレート: docs/rules/knowledge/template.md
 - カテゴリ: design-decisions / review-findings / test-patterns / lessons-learned
 - ファイル名: YYYYMMDD_短いタイトル.md
 記録すべきナレッジがない場合はスキップして構いません。
+書き込み完了後（またはスキップ後）、通常の応答を続けてください。
 MSG
-  echo "0" > "$COUNTER_FILE"
   exit 0
 fi
 

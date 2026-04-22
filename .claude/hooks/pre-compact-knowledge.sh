@@ -18,4 +18,8 @@ MSG
 # カウンターをリセット
 echo "0" > "$COUNTER_FILE"
 
+# フラグファイルを作成（次セッションの UserPromptSubmit でナレッジ書き込みをトリガーする）
+FLAG_FILE="${CLAUDE_PROJECT_DIR:-.}/.claude/.post-compact-pending"
+touch "$FLAG_FILE"
+
 exit 0

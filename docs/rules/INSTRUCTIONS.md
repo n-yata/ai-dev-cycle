@@ -60,6 +60,36 @@ rules/
 - シャビの承認なしに自己判断でステータスを `COMPLETE` に更新しない
 - シャビの明示的な指示がない限りフェーズをスキップしない
 
+### MCP サーバー設定は `.mcp.json` に書く（2026-04-21）
+
+> 出典: `docs/knowledge/reflected/design-decisions/20260421_mcp-server-placement.md`
+
+**Do:**
+- MCP サーバーの設定は `.mcp.json` に書く（`settings.json` の schema に `mcpServers` フィールドは存在しない）
+- GitHub PAT などのシークレットは `.env` に書き、チャットには貼らない
+- 実装フェーズに入ったら `docs/rules/3_implementation/*/guidelines.md` の内容を `.claude/rules/` に複製することを検討する
+
+**Don't:**
+- `settings.json` に `mcpServers` を書こうとしない（schema エラーになる）
+- トークン・シークレットをチャットに貼らない（会話ログに残る）
+
+---
+
+### `/clear` 前のナレッジ書き込みは手動で行う（2026-04-22）
+
+> 出典: `docs/knowledge/reflected/lessons-learned/20260422_clear-compact-hook-unreliable.md`
+
+**Do:**
+- `/compact` 後の次ターンで KNOWLEDGE_TRIGGER が来たら、compact サマリーをもとにナレッジを書く
+- `/clear` を実行する前に、手動でナレッジ書き込みを実行する（`[KNOWLEDGE_TRIGGER]` を自分で意識する）
+- セッション境界を越える自動化にはフラグファイルパターンを使う
+
+**Don't:**
+- `/clear` 実行前のナレッジ書き込みをフックに任せない（構造的に自動化不可能）
+- `PreCompact` フック内でナレッジ自動書き込みを完結させようとしない（compact がフック完了直後に走るため間に合わない）
+
+---
+
 ### ドキュメント整理時は構造ではなく中身で判断する（2026-04-18）
 
 > 出典: `docs/knowledge/reflected/lessons-learned/20260418_doc-cleanup-read-before-delete.md`

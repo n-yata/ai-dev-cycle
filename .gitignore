@@ -46,6 +46,7 @@ out/
 # =========================
 .claude/settings.local.json
 .claude/.knowledge-counter
+.claude/.post-compact-pending
 .claude/.rules-gate-state/
 .claude/worktrees/
 .claude/worktrees/
