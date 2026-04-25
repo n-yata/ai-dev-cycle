@@ -90,36 +90,33 @@
 
 ## ナレッジ自動蓄積
 
-### トリガーと動作
+### 基本方針
 
-フックシステムにより `[KNOWLEDGE_TRIGGER]` メッセージが注入される。以下のタイミングで発火する:
+**会話の中でナレッジに値する内容が生まれた瞬間、即座に書き込む。**  
+フックや外部トリガーを待たず、モドリッチが自律的に判断して記録する。
 
-| トリガー | 仕組み | タイミング |
-|---------|--------|-----------|
-| 10ターンごと | `UserPromptSubmit` フック | 会話が10往復に達した時点 |
-| `/compact` 実行時 | `PreCompact` フック | compact 処理の直前 |
-| `/clear` 実行時 | `UserPromptSubmit` フック | /clear コマンド検出時 |
+### 書き込みタイミング（リアルタイム検知）
 
-### `[KNOWLEDGE_TRIGGER]` を受け取ったときの動作
+会話中に以下に該当する内容が出たら、**その応答の中で即書き込む**:
 
-1. **この会話で記録すべきナレッジがあるか判断する**
-   - 設計判断・トレードオフの議論があった → `design-decisions/`
-   - コードレビューで指摘パターンがあった → `review-findings/`
-   - テストで発見したバグ・有効な手法があった → `test-patterns/`
-   - フェーズの振り返り・教訓があった → `lessons-learned/`
-2. **記録すべきものがあれば** カテゴリに応じたサブディレクトリに書き込む
-   - テンプレート: `docs/rules/knowledge/template.md` を使用
-   - ファイル名: `YYYYMMDD_短いタイトル.md`（例: `20260416_hook-system-design.md`）
-   - 不要なセクションは省略してよい（概要・事実・理由・次回への示唆は必須）
-   - **格納先（カテゴリ別）**:
-     | カテゴリ | 格納先 | 対象 |
-     |---------|--------|------|
-     | design-decisions | `docs/knowledge/design-decisions/` | 設計判断・技術スタック選定・却下した選択肢 |
-     | review-findings | `docs/knowledge/review-findings/` | コードレビューの指摘パターン |
-     | test-patterns | `docs/knowledge/test-patterns/` | バグパターン・効果的なテスト手法 |
-     | lessons-learned | `docs/knowledge/lessons-learned/` | フェーズ振り返り・教訓 |
-   - **`docs/knowledge/` 直下には絶対に置かない**
-3. **記録すべきものがなければスキップ**して通常の応答を続ける
+- 設計判断・トレードオフの議論が決着した → `design-decisions/`
+- コードレビューで指摘パターンが明確になった → `review-findings/`
+- テストで有効な手法・バグパターンが判明した → `test-patterns/`
+- フェーズ完了後や失敗から教訓が得られた → `lessons-learned/`
+
+### 書き込みルール
+
+- テンプレート: `docs/rules/knowledge/template.md` を使用
+- ファイル名: `YYYYMMDD_短いタイトル.md`（例: `20260416_hook-system-design.md`）
+- 不要なセクションは省略してよい（概要・事実・理由・次回への示唆は必須）
+- **格納先（カテゴリ別）**:
+  | カテゴリ | 格納先 | 対象 |
+  |---------|--------|------|
+  | design-decisions | `docs/knowledge/design-decisions/` | 設計判断・技術スタック選定・却下した選択肢 |
+  | review-findings | `docs/knowledge/review-findings/` | コードレビューの指摘パターン |
+  | test-patterns | `docs/knowledge/test-patterns/` | バグパターン・効果的なテスト手法 |
+  | lessons-learned | `docs/knowledge/lessons-learned/` | フェーズ振り返り・教訓 |
+- **`docs/knowledge/` 直下には絶対に置かない**
 
 ### 記録すべきかの判断基準
 
@@ -136,8 +133,3 @@
 - 公式ドキュメントに書いてあること
 - コードを読めば自明な内容
 - 一時的な作業メモ
-
-### /clear 前の注意
-
-`/clear` はローカルコマンドのため、フックで確実に捕捉できない場合がある。
-ユーザーが `/clear` を実行する意思を示した場合、**ナレッジ書き込みを先に実行してから** `/clear` を案内すること。
